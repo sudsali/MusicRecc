@@ -1,0 +1,9 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+pyspark==3.5.0
+python-dotenv==1.0.0
+pydantic==2.5.2
+pydantic-settings==2.1.0
+numpy
+openai>=1.55.3
+httpx>=0.24.0

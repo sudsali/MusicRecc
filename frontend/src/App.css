@@ -1,0 +1,248 @@
+html *
+{
+  font-family: Inter !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.App {
+  position: fixed;
+  background-color: black;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.Header {
+  /* Rectangle 107 */
+  position: absolute;
+  width: 1728px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header-button {
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  border: 0px;
+  cursor: pointer;
+}
+
+.pipinstall-logo {
+  margin-left: 24px;
+  margin-right: 8px;
+}
+
+.logout-button {
+  color: black;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  background-color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.login-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 605px;
+  height: 502px;
+  background-color: black;
+  /* border: solid 1px white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 1s;
+  transition-duration: 0.5s;
+  will-change: opacity;
+}
+
+.input-field {
+  box-sizing: border-box;
+  width: 495px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 16px;
+  border: none;
+}
+
+.button-custom {
+  position: absolute;
+  width: 495px;
+  height: 50px;
+  font-size: 16px;
+  background-color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.error-text {
+  color: #EF4444;
+  width: 100%;
+  text-align: center;
+  margin-top: 56px;
+}
+
+.loading-bar-container {
+  width: 495px;
+  height:  12px;
+  overflow: hidden;
+  transform: translate(0, 64px);
+  border: solid 1px white;
+  opacity: 0;
+}
+
+.first-load {
+  animation: fade-in 0.25s ease-in 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.loading-bar {
+  width: 495px;
+  height: 12px;
+  background-color: white;
+}
+
+.animate-in{
+  animation: progressBarIn 8s ease-in-out;
+}
+
+.animate-in-slow{
+  animation: progressBarIn 12s ease-in-out;
+}
+
+.animate-out {
+  animation: progressBarOut 0.25s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes progressBarIn {
+  0% {transform: translate(-100%);}
+  100% {transform: translate(0%);}
+}
+@keyframes progressBarOut {
+  0% {transform: translate(0%);}
+  100% {transform: translate(-100%);}
+}
+
+
+.wrapped-container {
+  position: absolute;
+  top: 48px;
+  left: 0%;
+  width: 100%;
+  height: calc(100% - 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  font-size: 24px;
+  color: white;
+  justify-content: space-between;
+  animation: fade-in 1s;
+}
+.first-row {
+  /* height: 232px; */
+  width: 100%;
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.doublecard {
+  width: 808px;
+  border: solid 1px white;
+}
+
+.second-row {
+  height: 100px;
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singlecard {
+  width: 396px;
+  height: 100px;
+  border: solid 1px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-align-last: center;
+  padding: 24px;
+}
+
+.top-all {
+  display: flex;
+}
+.top-content {
+  width: 404px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.ordered-list {
+  list-style-position: inside;
+}
+
+.two-row-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.match-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 24px;
+  border-top: dashed 1px white;
+}
+
+.match-card {
+  height: 232px;
+  width: 808px;
+  border: solid 1px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
