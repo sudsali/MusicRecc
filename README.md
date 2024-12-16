@@ -21,6 +21,34 @@ The architecture of this system consists of:
 - React
 - OpenAI API
 
+## Methodology
+
+Our Music-Based User Matchmaking System employs a collaborative filtering approach using matrix factorization. The methodology includes:
+
+1. **Data Preprocessing**: Cleaning and transforming raw user listening data, including handling missing values and encoding categorical variables.
+
+2. **Feature Engineering**: Creating temporal features (e.g., day of week, hour of day), user behavior features (e.g., listening count, mobile usage ratio), and track features (e.g., popularity, normalized length).
+
+3. **Model Architecture**: Utilizing Apache Spark's MLlib to implement Alternating Least Squares (ALS) for matrix factorization.
+
+4. **Training and Evaluation**: Splitting data into training and test sets, performing hyperparameter tuning via cross-validation, and evaluating using RMSE and MAE metrics.
+
+5. **Recommendation Generation**: Predicting user-track ratings and generating top-N recommendations for each user.
+
+## Results
+
+Our system's performance was evaluated using standard regression metrics:
+
+### Default Model
+- Root Mean Squared Error (RMSE): 0.57
+- Mean Absolute Error (MAE): 0.35
+
+### Best Model (After Hyperparameter Tuning)
+- Root Mean Squared Error (RMSE): 0.43
+- Mean Absolute Error (MAE): 0.26
+
+The significant improvement in both RMSE and MAE demonstrates the effectiveness of our hyperparameter tuning process and the robustness of our collaborative filtering approach for music recommendation.
+
 ## Getting Started
 
 ### Prerequisites
