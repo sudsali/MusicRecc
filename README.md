@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# Music-Based User Matchmaking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+The Music-Based User Matchmaking System is a project aimed at connecting individuals through shared music preferences. In a world where digital interactions often overshadow personal connections, this system leverages music as a universal language to foster genuine relationships. By analyzing user listening habits and preferences, the system provides personalized music recommendations and identifies users with similar tastes, enhancing social connectivity.
 
-In the project directory, you can run:
+## System Architecture
 
-### `npm start`
+The architecture of this system consists of:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Data Source**: A dataset containing user listening history, track metadata, and demographic information.
+2. **Apache Spark**: Utilized for processing large datasets and performing collaborative filtering.
+3. **FastAPI**: Serves as the backend framework for handling API requests and integrating with the frontend.
+4. **React**: Provides a dynamic and interactive user interface for displaying recommendations and user matches.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+- Python
+- Apache Spark
+- FastAPI
+- React
+- OpenAI API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Python 3.x installed locally.
+- Node.js and npm installed for the React frontend.
+- An OpenAI API Key for generating recommendations.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation Steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 1. Clone the Repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/yourusername/MusicRecommendationSystem.git
+cd MusicRecommendationSystem
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 2. Set Up Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navigate to the backend directory and create a virtual environment:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install the required packages:
 
-## Learn More
+```bash
+pip install -r requirements.txt
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env` file in the backend directory with your OpenAI API key:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+OPENAI_API_KEY=your-openai-api-key
+```
 
-### Code Splitting
+#### 3. Set Up Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Navigate to the frontend directory:
 
-### Analyzing the Bundle Size
+```bash
+cd ../frontend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Build the React app:
 
-### Making a Progressive Web App
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### 4. Run the Application
 
-### Advanced Configuration
+Start the FastAPI backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+uvicorn app.main:app --reload
+```
 
-### Deployment
+Start the React frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Once both the backend and frontend are running, open your browser and navigate to `http://localhost:3000` to access the application.
+
+### Features
+
+- **Personalized Recommendations**: Users receive music recommendations based on their listening history.
+- **User Matchmaking**: Discover users with similar musical tastes.
+- **Interactive UI**: Explore recommended tracks and user matches through an intuitive interface.
+
+### Landing Page Screenshot:
+![Landing Page](assets/LandingPage.png)
+
+### Results Page Screenshot:
+![Results Page](assets/ResultsPage.png)
+
+### Generated Report:
+[Read Full Report](assets/music_report_102.txt)
+
+
+## Configuration Details
+
+### Backend Configuration (`app/config.py`)
+
+This file contains all necessary configurations for connecting to external services such as OpenAI.
+
+- **OPENAI_API_KEY**: Your OpenAI API key for accessing GPT models.
+
+### Frontend Configuration (`package.json`)
+
+Ensure that your `homepage` field in `package.json` is set correctly if deploying on GitHub Pages.
+
+## Troubleshooting
+
+- **Connection Issues**: Ensure that your API keys are correctly set in the environment variables.
+- **Frontend Build Errors**: Check that all dependencies are installed correctly using `npm install`.
+
+## Contributing
+
+Contributions are welcome! Please create an issue or submit a pull request if you have suggestions or improvements.
